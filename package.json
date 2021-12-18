@@ -1,0 +1,219 @@
+{
+  "name": "prettier-eslint-revamp",
+  "displayName": "Prettier-ESLint Revamped",
+  "description": "Combines PrettierJS and ESLint together",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "keywords": [
+    "multi-root ready",
+    "prettier",
+    "eslint",
+    "formatter",
+    "javascript",
+    "js",
+    "typescript",
+    "ts",
+    "css",
+    "less",
+    "scss",
+    "markdown",
+    "md",
+    "mdx",
+    "html",
+    "vue",
+    "angular",
+    "graphql",
+    "yaml",
+    "yml"
+  ],
+  "categories": [
+    "Formatters"
+  ],
+  "license": "MIT",
+  "activationEvents": [
+    "onLanguage:css",
+    "onLanguage:graphql",
+    "onLanguage:html",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:json",
+    "onLanguage:jsonc",
+    "onLanguage:less",
+    "onLanguage:markdown",
+    "onLanguage:scss",
+    "onLanguage:svelte",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:vue",
+    "onLanguage:yaml",
+    "onCommand:prettier-eslint-revamp.show-output",
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "langauges": [
+      {
+        "id": "css",
+        "aliases": [
+          "css",
+          "Cascading Style Sheets"
+        ],
+        "extensions": [
+          ".css"
+        ]
+      },
+      {
+        "id": "graphql",
+        "aliases": [
+          "graphql"
+        ],
+        "extensions": [
+          ".graphql"
+        ]
+      },
+      {
+        "id": "html",
+        "aliases": [
+          "HTML",
+          "Hypertext Markup Language"
+        ],
+        "extensions": [
+          ".html",
+          ".htm"
+        ]
+      },
+      {
+        "id": "javascript",
+        "aliases": [
+          "JavaScript",
+          "JS",
+          "CommonJS"
+        ],
+        "extensions": [
+          ".js",
+          ".cjs"
+        ]
+      },
+      {
+        "id": "less",
+        "aliases": [
+          "less"
+        ],
+        "extensions": [
+          ".less"
+        ]
+      },
+      {
+        "id": "markdown",
+        "aliases": [
+          "Markdown",
+          "MD"
+        ],
+        "extensions": [
+          ".md"
+        ]
+      },
+      {
+        "id": "scss",
+        "aliases": [
+          "scss"
+        ],
+        "extensions": [
+          ".scss",
+          ".sass"
+        ]
+      },
+      {
+        "id": "svelte",
+        "aliases": [
+          "Svelte"
+        ],
+        "extensions": [
+          ".svelte"
+        ]
+      },
+      {
+        "id": "typescript",
+        "aliases": [
+          "TypeScript"
+        ],
+        "extensions": [
+          ".ts"
+        ]
+      },
+      {
+        "id": "typescriptreact",
+        "aliases": [
+          "TypeScript React",
+          "React",
+          "ReactJS"
+        ],
+        "extensions": [
+          ".tsx"
+        ]
+      },
+      {
+        "id": "vue",
+        "aliases": [
+          "Vue",
+          "VueJS"
+        ],
+        "extensions": [
+          ".vue"
+        ]
+      },
+      {
+        "id": "yaml",
+        "aliases": [
+          "YAML",
+          "YML"
+        ],
+        "extensions": [
+          ".yaml",
+          ".yml"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "prettier-eslint-revamp.show-output",
+        "title": "Prettier-ESLint: Show Output"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@types/prettier": "^2.4.2",
+    "@types/vscode": "^1.63.0",
+    "@vscode/test-electron": "^1.6.2",
+    "glob": "^7.1.7",
+    "mocha": "^9.1.3",
+    "ts-loader": "^9.2.5",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint": "^8.4.1",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.4",
+    "vscode-languageclient": "^7.0.0",
+    "vue-eslint-parser": "^8.0.1"
+  }
+}
